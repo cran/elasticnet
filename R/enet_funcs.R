@@ -2,6 +2,8 @@ enet<-
 function (x, y, lambda = 0, max.steps, normalize = TRUE, intercept = TRUE, 
     trace = FALSE, eps = .Machine$double.eps) 
 {
+    ### Authors: Hui Zou and Trevor Hastie 
+    ### Based on the LARS algorithm by Brad Efron and Trevor Hastie
     call <- match.call()
     nm <- dim(x)
     n <- nm[1]
@@ -292,7 +294,7 @@ function (x, xvar=c("fraction","penalty","L1norm","step"),use.color = FALSE, ...
                 lines(s1, coef1[, i], lty = 1)
             }
             if (!is.null(vn)) {
-             axis(4, at = coef1[nrow(coef1), ], labels = vn, cex = 0.8, adj = 0)
+             axis(4, at = coef1[nrow(coef1), ], label = vn, cex = 0.8, adj = 0)
             }
           }
         abline(h = 0, lty = 3)
@@ -619,7 +621,6 @@ arrayspc<-
 function(x,K=1,para,use.corr=FALSE, max.iter=100,trace=FALSE,eps=1e-3)
 {     call <- match.call()
       x<-scale(x,center=TRUE,scale=use.corr)
-      svdobj<-svd(x)
       v<-svdobj$v
       totalvariance<-sum((svdobj$d)^2)      
       alpha<-as.matrix(v[,1:K,drop=FALSE])      
