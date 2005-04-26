@@ -5,7 +5,7 @@
 Print out an arrayspc fit. 
 }
 \usage{
-print.arrayspc<-function(x, ...)  
+print.arrayspc(x, ...)  
 }
 \arguments{
   \item{x}{arrayspc object}

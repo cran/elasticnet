@@ -386,7 +386,6 @@ function(x,K,para,type=c("predictor","Gram"),sparse=c("penalty","varnum"),use.co
       call <- match.call()
       type <- match.arg(type)
       sparse <- match.arg(sparse)
-      matrix
       vn <- dimnames(x)[[2]]
       x<-switch(type,
                 predictor = {
@@ -444,7 +443,7 @@ function(x,K,para,type=c("predictor","Gram"),sparse=c("penalty","varnum"),use.co
       u<-x%*%beta
       R<-qr.R(qr(u))
       pev<-diag(R^2)/totalvariance
-   obj<-list(call = call, type=type, K=K,loadings=beta,pev=pev,var.all=totalvariance, vn=vn,para=para,lambda=lambda)
+      obj<-list(call = call, type=type, K=K,loadings=beta,pev=pev,var.all=totalvariance, vn=vn,para=para,lambda=lambda)
       class(obj) <- "spca"
       obj  
 }
@@ -571,7 +570,7 @@ solvebeta<-function(x, y, paras, max.steps, sparse=c("penalty","varnum"), eps = 
 				R <- downdateR(R, id)
       			}
 			dropid <- active[drops]
-                        beta[k + 1, dropid] <- 0
+                        beta[dropid] <- 0
 			active <- active[!drops]
 			Sign <- Sign[!drops]
                       }
@@ -590,6 +589,7 @@ solvebeta<-function(x, y, paras, max.steps, sparse=c("penalty","varnum"), eps = 
 rootmatrix<-function(x){
      x.eigen<-eigen(x)
      d<-x.eigen$values
+     d<-(d+abs(d))/2
      v<-x.eigen$vectors
      return (v%*%diag(sqrt(d))%*%t(v))
 } 
@@ -621,6 +621,7 @@ arrayspc<-
 function(x,K=1,para,use.corr=FALSE, max.iter=100,trace=FALSE,eps=1e-3)
 {     call <- match.call()
       x<-scale(x,center=TRUE,scale=use.corr)
+      svdobj<-svd(x)
       v<-svdobj$v
       totalvariance<-sum((svdobj$d)^2)      
       alpha<-as.matrix(v[,1:K,drop=FALSE])      

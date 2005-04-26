@@ -33,9 +33,9 @@ Invisibly returns a list with components (which can be plotted using \code{plotC
   \item{cv.error}{The standard error of the CV curve}
 }
 \references{
-Zou and Hastie (2004) "Regularization and
+Zou and Hastie (2005) "Regularization and
 Variable Selection via the Elastic Net"
-\emph{In press, Journal of the Royal Statistical Society, Series B}.
+\emph{Journal of the Royal Statistical Society, Series B,76,301-320}.
 }
 \author{Hui Zou and Trevor Hastie}
 \examples{
