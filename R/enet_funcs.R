@@ -2,8 +2,6 @@ enet<-
 function (x, y, lambda = 0, max.steps, normalize = TRUE, intercept = TRUE, 
     trace = FALSE, eps = .Machine$double.eps) 
 {
-    ### Authors: Hui Zou and Trevor Hastie 
-    ### Based on the LARS algorithm by Brad Efron and Trevor Hastie
     call <- match.call()
     nm <- dim(x)
     n <- nm[1]
