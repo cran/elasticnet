@@ -5,7 +5,7 @@
 Print out an enet fit. 
 }
 \usage{
-print.enet(x, ...)  
+\method{print}{enet}(x, ...)  
 }
 \arguments{
   \item{x}{enet object}

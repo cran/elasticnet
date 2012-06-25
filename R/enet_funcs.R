@@ -292,7 +292,7 @@ function (x, xvar=c("fraction","penalty","L1norm","step"),use.color = FALSE, ...
                 lines(s1, coef1[, i], lty = 1)
             }
             if (!is.null(vn)) {
-             axis(4, at = coef1[nrow(coef1), ], label = vn, cex = 0.8, adj = 0)
+             axis(4, at = coef1[nrow(coef1), ], labels = vn, cex = 0.8, adj = 0)
             }
           }
         abline(h = 0, lty = 3)

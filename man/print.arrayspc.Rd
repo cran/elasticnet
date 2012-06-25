@@ -5,7 +5,7 @@
 Print out an arrayspc fit. 
 }
 \usage{
-print.arrayspc(x, ...)  
+\method{print}{arrayspc}(x, ...)  
 }
 \arguments{
   \item{x}{arrayspc object}

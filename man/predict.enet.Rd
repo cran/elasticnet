@@ -8,7 +8,7 @@ While enet() produces the entire path of solutions, predict.enet
 allows one to extract a prediction at a particular point along the path.
 }
 \usage{
-predict.enet(object, newx, s, type = c("fit", "coefficients"), mode =
+\method{predict}{enet}(object, newx, s, type = c("fit", "coefficients"), mode =
 c("step","fraction", "norm", "penalty"),naive=FALSE, ...)
 }
 \arguments{

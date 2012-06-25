@@ -5,7 +5,7 @@
 Produce a plot of an enet fit. The default is a complete coefficient path.
 }
 \usage{
-plot.enet(x, xvar = c("fraction", "penalty", "L1norm", "step"),
+\method{plot}{enet}(x, xvar = c("fraction", "penalty", "L1norm", "step"),
 use.color = FALSE, ...) 
 }
 \arguments{

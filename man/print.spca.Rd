@@ -5,7 +5,7 @@
 Print out a spca fit. 
 }
 \usage{
-print.spca(x, ...)  
+\method{print}{spca}(x, ...)  
 }
 \arguments{
   \item{x}{spca object}
