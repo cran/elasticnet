@@ -1,0 +1,19 @@
+# Default NAMESPACE created by R
+# Remove the previous line if you edit this file
+
+# Export all names
+exportPattern(".")
+
+# Import all packages listed as Imports or Depends
+import(
+  lars
+)
+
+S3method(plot, enet)
+S3method(predict, enet)
+S3method(print, arrayspc)
+S3method(print, enet)
+S3method(print, spca)
+
+importFrom("graphics", "abline", "axis", "lines", "plot")
+importFrom("stats", "approx", "predict", "var")

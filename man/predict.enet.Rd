@@ -8,7 +8,7 @@ While enet() produces the entire path of solutions, predict.enet
 allows one to extract a prediction at a particular point along the path.
 }
 \usage{
-predict.enet(object, newx, s, type = c("fit", "coefficients"), mode =
+\method{predict}{enet}(object, newx, s, type = c("fit", "coefficients"), mode =
 c("step","fraction", "norm", "penalty"),naive=FALSE, ...)
 }
 \arguments{
@@ -49,9 +49,9 @@ Either a vector/matrix of fitted values, or a vector/matrix of coefficients.
 \details{
 Starting from zero, the LARS-EN algorithm provides the entire sequence of coefficients and fits.
 }\references{
-Zou and Hastie (2004) "Regularization and
+Zou and Hastie (2005) "Regularization and
 Variable Selection via the Elastic Net"
-\emph{In press, Journal of the Royal Statistical Society, Series B}.
+\emph{Journal of the Royal Statistical Society, Series B,67,301-320}.
 }
 \author{Hui Zou and Trevor Hastie}
 \seealso{

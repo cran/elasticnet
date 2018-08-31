@@ -1,0 +1,17 @@
+98b279b2a5971bb8ec3446dfb50b6aff *DESCRIPTION
+e58e6884e8c920cba8ea041442d93a40 *NAMESPACE
+abab00fa1e08a053a40489921217f58d *R/enet_funcs.R
+70dab4eb1ce059b1251bb47e6d939f8a *data/diabetes.RData
+555c7bd08c951af93c435a90d74ed5f2 *data/pitprops.RData
+c7fac5e371069b5bba51e0b685170bcf *man/arrayspc.Rd
+a28dd39bac3d46f14d00a3e8d5abd5e3 *man/cv.enet.Rd
+55bad00f64600e63734911fcb347f945 *man/diabetes.Rd
+cc59641239747e504e1f38ca17a7b952 *man/elasticnet-internal.Rd
+86efb130de904e74c9dfe095a049d2d4 *man/enet.Rd
+a6f47f555123f310f2d8c1f79beb3850 *man/pitprops.Rd
+86cfcaee7cc938b4334edb62f40cfd9a *man/plot.enet.Rd
+14b91a870ab6ef62caeef5ef06650440 *man/predict.enet.Rd
+996f74bbfe562df20132f123c1bfc404 *man/print.arrayspc.Rd
+1c8b94a68ab9b629ef23e968d51bb51b *man/print.enet.Rd
+616f521b399f446eecb1501df0fcff29 *man/print.spca.Rd
+ffae49aca558e1f70db0654033dde76c *man/spca.Rd

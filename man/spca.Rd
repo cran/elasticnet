@@ -3,7 +3,9 @@
 \title{Sparse Principal Components Analysis}
 \description{Using an alternating minimization algorithm to minimize the SPCA criterion.}
 \usage{
-spca(x,K,para,type=c("predictor","Gram"),sparse=c("penalty","varnum"),use.corr=FALSE,lambda=1e-6,max.iter=200,trace=FALSE,eps.conv=1e-3)
+spca(x, K, para, type=c("predictor","Gram"),
+     sparse=c("penalty","varnum"), use.corr=FALSE, lambda=1e-6,
+     max.iter=200, trace=FALSE, eps.conv=1e-3)
 }
 \arguments{
 \item{x}{

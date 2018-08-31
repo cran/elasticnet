@@ -5,7 +5,7 @@
 Print out an enet fit. 
 }
 \usage{
-print.enet(x, ...)  
+\method{print}{enet}(x, ...)  
 }
 \arguments{
   \item{x}{enet object}
@@ -13,8 +13,8 @@ print.enet(x, ...)
 }
 \value{NULL}
 \references{
-Zou and Hastie (2004) "Regularization and Variable Selection via the Elastic Net"
-\emph{In press, Journal of the Royal Statistical Society, Series B}.
+Zou and Hastie (2005) "Regularization and Variable Selection via the Elastic Net"
+\emph{Journal of the Royal Statistical Society, Series B,67,301-320}.
 }
 \author{Hui Zou and Trevor Hastie}
 \keyword{methods}

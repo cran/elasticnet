@@ -7,7 +7,8 @@ Fits Elastic Net regression models
   Starting from zero, the LARS-EN algorithm provides the entire sequence of coefficients and fits.
 }
 \usage{
-enet(x, y, lambda, max.steps, normalize=TRUE, intercept=TRUE, trace = FALSE, eps = .Machine$double.eps)
+enet(x, y, lambda, max.steps, normalize=TRUE, intercept=TRUE,
+     trace = FALSE, eps = .Machine$double.eps)
 }
 \arguments{
 \item{x}{
@@ -47,9 +48,9 @@ Some internel functions from the lars package are called.
 The user should install lars before using elasticnet functions.
 }
 \references{
-Zou and Hastie (2004) "Regularization and
+Zou and Hastie (2005) "Regularization and
 Variable Selection via the Elastic Net"
-\emph{In press, Journal of the Royal Statistical Society, Series B}.
+\emph{Journal of the Royal Statistical Society, Series B, 67, 301-320}.
 }
 \author{Hui Zou and Trevor Hastie}
 \seealso{

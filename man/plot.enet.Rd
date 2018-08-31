@@ -5,7 +5,7 @@
 Produce a plot of an enet fit. The default is a complete coefficient path.
 }
 \usage{
-plot.enet(x, xvar = c("fraction", "penalty", "L1norm", "step"),
+\method{plot}{enet}(x, xvar = c("fraction", "penalty", "L1norm", "step"),
 use.color = FALSE, ...) 
 }
 \arguments{
@@ -21,8 +21,8 @@ vector. \code{xvar=step} plots against the LARS-EN step number.
 }
 \value{NULL}
 \references{
-Zou and Hastie (2004) "Regularization and Variable Selection via the Elastic Net"
-\emph{In press, Journal of the Royal Statistical Society, Series B}.
+Zou and Hastie (2005) "Regularization and Variable Selection via the Elastic Net"
+\emph{Journal of the Royal Statistical Society, Series B,67,301-320}.
 }
 \author{Hui Zou and Trevor Hastie}
 \examples{
