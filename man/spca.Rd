@@ -49,10 +49,10 @@ PCA is shown to be equivalent to a regression-type optimization problem,
 then sparse loadings are obtained by imposing the 1-norm constraint on
 the regression coefficients. If x is a microarray matrix, use arrayspc().
 }\references{
-Zou, H., Hastie, T. and Tibshirani, R. (2004) "Sparse principal component
-analysis" \emph{Technical report, Statistics Dept. Stanford University}.
+Zou, H., Hastie, T. and Tibshirani, R. (2006) "Sparse principal component
+analysis" \emph{Journal of Computational and Graphical Statistics}, 15 (2), 265--286.
 }
-\author{Hui Zou, Trevor Hastie and Robert Tibshirani}
+\author{Hui Zou and Trevor Hastie}
 \seealso{
 princomp, arrayspc
 }

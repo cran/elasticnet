@@ -189,6 +189,7 @@ function (x, y, lambda = 0, max.steps, normalize = TRUE, intercept = TRUE,
 }
 
 
+
 predict.enet<-
 function (object, newx, s, type = c("fit", "coefficients"), mode = c("step", 
     "fraction", "norm", "penalty"), naive = FALSE, ...) 
@@ -247,13 +248,22 @@ function (object, newx, s, type = c("fit", "coefficients"), mode = c("step",
         (sfrac - sbeta[left]) * betas[right, , drop = FALSE])/(sbeta[right] - 
         sbeta[left])
     newbetas[left == right, ] <- betas[left[left == right], ]
+
+    if(!missing(newx)){   	
+        if(is.matrix(newx)==FALSE){
+        	   newx<-rbind(newx)
+          }	            
+        yhat<-drop(scale(newx[,allset,drop=FALSE], object$meanx, FALSE) %*% t(newbetas)) + object$mu
+      }  
     robject <- switch(type, coefficients = list(s = s, fraction = sfrac, 
         mode = mode, coefficients = drop(newbetas)), fit = list(s = s, 
-        fraction = sfrac, mode = mode, fit = drop(scale(newx[, 
-            allset], object$meanx, FALSE) %*% t(newbetas)) + 
-            object$mu))
+        fraction = sfrac, mode = mode, fit = yhat))
     robject
 }
+
+
+
+
 
 plot.enet<-
 function (x, xvar=c("fraction","penalty","L1norm","step"),use.color = FALSE, ...) 
@@ -383,12 +393,12 @@ function(x,K,para,type=c("predictor","Gram"),sparse=c("penalty","varnum"),use.co
 {
       call <- match.call()
       type <- match.arg(type)
-      sparse <- match.arg(sparse)
+      sparse <- match.arg(sparse)      
       vn <- dimnames(x)[[2]]
       x<-switch(type,
                 predictor = {
-                n<-dim(x)[1]
-                p<-dim(x)[2]
+                	      n<-dim(x)[1]
+                      p<-dim(x)[2]
                 if (n/p>=100){
     cat("You may wish to restart and use a more efficient way \n")
     cat("let the argument x be the sample covariance/correlation matrix and set type=Gram \n")
@@ -426,7 +436,7 @@ function(x,K,para,type=c("predictor","Gram"),sparse=c("penalty","varnum"),use.co
          normbeta<-sqrt(apply(beta^2,2,sum))
          normbeta[normbeta==0]<-1
          beta2<-t(t(beta)/normbeta)
-         diff<-max(abs(beta2-temp))
+         diff<-convcheck(beta2,temp) 
          temp<-beta2
            if(trace){
               if (k%%10==0){
@@ -592,6 +602,16 @@ rootmatrix<-function(x){
      return (v%*%diag(sqrt(d))%*%t(v))
 } 
 
+convcheck<-function(beta1,beta2){
+		a<-apply(abs(beta1+beta2),2,max)
+		b<-apply(abs(beta1-beta2),2,max)		
+	    d<-length(a)
+	    x<-rep(1,d)
+	    for (i in 1:d){
+	       x[i]<-min(a[i],b[i])
+	    }
+	    max(x)
+}
 
 print.spca<-function(x, ...){
      cat("\nCall:\n")
@@ -616,7 +636,7 @@ print.spca<-function(x, ...){
 
 
 arrayspc<-
-function(x,K=1,para,use.corr=FALSE, max.iter=100,trace=FALSE,eps=1e-3)
+function(x,K=1,para,use.corr=FALSE, max.iter=200,trace=FALSE,eps=1e-3)
 {     call <- match.call()
       x<-scale(x,center=TRUE,scale=use.corr)
       svdobj<-svd(x)
@@ -647,7 +667,7 @@ function(x,K=1,para,use.corr=FALSE, max.iter=100,trace=FALSE,eps=1e-3)
          normbeta<-sqrt(apply(beta^2,2,sum))
          normbeta[normbeta==0]<-1
          beta2<-t(t(beta)/normbeta)
-         diff<-max(abs(beta2-temp))
+          diff<-convcheck(beta2,temp)
          temp<-beta2
           if(trace){
               if (k%%10==0){
@@ -667,7 +687,6 @@ function(x,K=1,para,use.corr=FALSE, max.iter=100,trace=FALSE,eps=1e-3)
 }
 
 soft<-function(a,para){
-  b<-sort(abs(a))
   b<-abs(a)-para
   b<-(b+abs(b))/2
   b<-sign(a)*b

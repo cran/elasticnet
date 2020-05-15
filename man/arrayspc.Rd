@@ -3,7 +3,7 @@
 \title{Sparse PCs of Microarrays}
 \description{Sparse PC by iterative SVD and soft-thresholding}
 \usage{
-arrayspc(x,K=1,para,use.corr=FALSE, max.iter=100,trace=FALSE,eps=1e-3)
+arrayspc(x,K=1,para,use.corr=FALSE, max.iter=200,trace=FALSE,eps=1e-3)
 }
 \arguments{
 \item{x}{
@@ -25,13 +25,13 @@ Number of components. Default is 1.
 The function is equivalent to a special case of spca() with the quadratic
 penalty=infinity. It is specifically designed for the case p>>n, like microarrays.
 }\references{
-Zou, H., Hastie, T. and Tibshirani, R. (2004) "Sparse principal component
-analysis" \emph{Technical report, Statistics Dept. Stanford University}
+Zou, H., Hastie, T. and Tibshirani, R. (2006) "Sparse principal component
+analysis" \emph{Journal of Computational and Graphical Statistics}, 15 (2), 265--286.
 }
 \seealso{
 spca, princomp
 }
-\author{Hui Zou, Trevor Hastie and Robert Tibshirani}
+\author{Hui Zou and Trevor Hastie}
 \keyword{multivariate}
 
 

@@ -13,8 +13,9 @@ Print out an arrayspc fit.
 }
 \value{NULL}
 \references{
-Zou, H., Hastie, T. and Tibshirani, R. (2004) "Sparse principal component
-analysis" \emph{Technical report, Statistics Dept. Stanford University}.
+Zou, H., Hastie, T. and Tibshirani, R. (2006) "Sparse principal component
+analysis" \emph{Journal of Computational and Graphical Statistics}, 15 (2), 265--286.
+
 }
 \author{Hui Zou and Trevor Hastie}
 \keyword{methods}

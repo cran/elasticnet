@@ -4,12 +4,14 @@
 \alias{solvebeta}
 \alias{rootmatrix}
 \alias{soft}
+\alias{convcheck}
 \description{Internal elasticnet functions}
 \usage{
 updateRR(xnew, R = NULL, xold, lambda, eps = .Machine$double.eps)
 solvebeta(x, y, paras, max.steps, sparse=c("penalty","varnum"), eps = .Machine$double.eps)
 rootmatrix(x)
 soft(a,para)
+convcheck(beta1,beta2)
 }
 \author{Hui Zou and Trevor Hastie}
 \details{
